@@ -8,8 +8,14 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    You have sucessfully logged in!
                 </div>
+
+                @foreach ($TList as $task)
+                    <div>
+                    {{ $task->task}}
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

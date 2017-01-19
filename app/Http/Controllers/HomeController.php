@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $TList = \DB::table('TaskList')->get();
+        
+        return view('home', compact('TList', 'task_create'));
+    }
+
+    public function store(){
+        $task_create = new task_list;
+        return view('create', compact('task_create'));
     }
 }
