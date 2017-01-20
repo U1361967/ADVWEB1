@@ -10,13 +10,17 @@
                 <div class="panel-body">
                     You have sucessfully logged in!
                 </div>
-
-                @foreach ($TList as $task)
-                    <div>
-                    {{ $task->task}}
+            </div>
+            <div class="panel panel-default">
+                    <div class="panel-heading">To-Do List:</div>
+                   
+                    @foreach ($find as $task)
+                    <div class="panel-body">• {{ $task->task}}
+                    <div style="float:right;"><a href="#">Edit</a>
+                    <a href="#">Delete</a></div>
                     </div>
                 @endforeach
-            </div>
+                </div>
         </div>
     </div>
 </div>
