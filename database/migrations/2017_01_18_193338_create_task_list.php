@@ -15,7 +15,7 @@ class CreateTaskList extends Migration
     {
         Schema::create('TaskList', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('task');
             $table->timestamps();

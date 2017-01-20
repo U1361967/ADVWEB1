@@ -13,17 +13,21 @@
             </div> -->
             <div class="panel panel-default">
                     <div class="panel-heading"><center>To-Do List:</center></div>
-                   
-                    @foreach ($find as $task)
-                    <div class="panel-body">• {{ $task->task}}
-                    <div style="float:right;">
-                        <a href="#"><button style="float: left;" type="button" class="btn btn-success">Edit</button></a>
-                    {!! Form::open(['method' => 'DELETE', 'route'=>['tasks.destroy', $task->id]]) !!}
-                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                     {!! Form::close() !!}
 
+                @foreach ($find as $task)
+                <div class="panel-body">
+                    <h4>{{ $task->task }}</h4>
+                    <a href="{{ url('/edit') }}" class="btn btn-primary">Edit Task</a>
+
+                    <div class="pull-right">
+                    {!! Form::open(['method' => 'DELETE', 'route'=>['tasks.destroy', $task->id]]) !!}
+                     {!! Form::submit('Delete This Task', ['class' => 'btn btn-danger']) !!}
+                     {!! Form::close() !!}
                     </div>
+                    <hr>
+                </div>
                 @endforeach
+
                 </div>
         </div>
     </div>

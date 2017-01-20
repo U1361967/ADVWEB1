@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\task_list;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskCRUDController extends Controller
 {
@@ -11,9 +12,10 @@ class TaskCRUDController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+public function index()
     {
-        //
+       $task = new task_list;
+        return view('create', compact('task'));
     }
 
     /**
@@ -32,10 +34,19 @@ class TaskCRUDController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+
+public function store(Request $request)
+{
+    $input = $request->all();
+
+    $input['user_id'] = Auth::user()->id;
+
+    task_list::create($input);
+
+    \Session::flash('flash_message', 'Task successfully added!');
+
+    return redirect()->back();
+}
 
     /**
      * Display the specified resource.
@@ -54,10 +65,10 @@ class TaskCRUDController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+public function edit($id)
+{
+    return view('edit');
+}
 
     /**
      * Update the specified resource in storage.
@@ -79,8 +90,10 @@ class TaskCRUDController extends Controller
      */
     public function destroy($task_id)
     {
-        $id = task_list::findOrFail($task_id);
+        $id = task_list::findorFail($task_id);
         $id->delete();
-        return view('home');
+        return redirect()->action('HomeController@index');
+
+
     }
 }

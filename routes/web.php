@@ -23,4 +23,9 @@ Route::get('/contactus', function() {
 	return view('contactus');
 });
 
-Route::resource('tasks','TaskCRUDController@destroy');
+Route::delete('tasks/{id}','TaskCRUDController@destroy');
+
+Route::get('/create', 'TaskCRUDController@index');
+Route::resource('tasks','TaskCRUDController@store');
+
+Route::get('tasks/{id}/edit', 'TaskCRUDController@edit');
