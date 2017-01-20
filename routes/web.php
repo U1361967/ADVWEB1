@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index');
 Route::get('/contactus', function() {
 	return view('contactus');
 });
+
+Route::resource('tasks','TaskCRUDController@destroy');

@@ -1,3 +1,17 @@
-{!! Form::model($task_create, ['action' => 'HomeController@store']) !!}
-// Insert Information Here
-{!! Form::close() !!}
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                    <div class="panel-heading">Create A New Task:</div>
+                   
+                    <div class="panel-body">
+                    	<center><p>Task:</p></center>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+@endsection

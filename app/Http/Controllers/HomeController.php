@@ -38,4 +38,5 @@ class HomeController extends Controller
         $task_create = new task_list;
         return view('create', compact('task_create'));
     }
+
 }

@@ -8,7 +8,7 @@ class task_list extends Model
 {
     //
 	protected $table = 'TaskList';
-	protected $fillable = array['task','user_id'];
+	protected $fillable = ['task','user_id'];
 
 
 	public function user(){
