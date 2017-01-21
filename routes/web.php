@@ -23,9 +23,15 @@ Route::get('/contactus', function() {
 	return view('contactus');
 });
 
+// delete the task
 Route::delete('tasks/{id}','TaskCRUDController@destroy');
 
+// shgow the form for creating the taskss
 Route::get('/create', 'TaskCRUDController@index');
+// process the create form 
 Route::resource('tasks','TaskCRUDController@store');
 
-Route::get('tasks/{id}/edit', 'TaskCRUDController@edit');
+// show the edit form
+Route::get('tasks/edit/{id}', 'TaskCRUDController@edit');
+// process the edit form
+Route::PATCH('tasks/edit/{id}', 'TaskCRUDController@update');

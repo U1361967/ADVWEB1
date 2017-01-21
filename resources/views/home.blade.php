@@ -17,7 +17,7 @@
                 @foreach ($find as $task)
                 <div class="panel-body">
                     <h4>{{ $task->task }}</h4>
-                    <a href="{{ url('/edit') }}" class="btn btn-primary">Edit Task</a>
+                    <a href="{{ url('tasks/edit/'.$task->id) }}" class="btn btn-primary">Edit Task</a>
 
                     <div class="pull-right">
                     {!! Form::open(['method' => 'DELETE', 'route'=>['tasks.destroy', $task->id]]) !!}

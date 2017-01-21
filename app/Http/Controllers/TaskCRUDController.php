@@ -56,7 +56,7 @@ public function store(Request $request)
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -67,7 +67,8 @@ public function store(Request $request)
      */
 public function edit($id)
 {
-    return view('edit');
+    $task = task_list::findorFail($id);
+    return view ('edit', compact('task'));
 }
 
     /**
@@ -79,7 +80,9 @@ public function edit($id)
      */
     public function update(Request $request, $id)
     {
-        //
+        $task = task_list::findorFail($id);
+        $task->update($request->all());
+        return redirect()->action('HomeController@index');
     }
 
     /**

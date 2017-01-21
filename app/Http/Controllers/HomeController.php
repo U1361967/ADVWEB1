@@ -24,14 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $TList = \DB::table('TaskList')->get();
 
         $user = Auth::id();
 
         $find = \DB::table('TaskList')->where('user_id','=',$user)->get();
         
-        return view('home', compact('find', 'task_create'));
+        return view('home', compact('find'));
     }
 
     public function store(){

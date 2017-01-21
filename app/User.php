@@ -27,6 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    // allows for joins with task_list model  and its connected table
     public function tasks(){
         $this->hasMany(task_list::class);
     }
