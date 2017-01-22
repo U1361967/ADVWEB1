@@ -24,10 +24,11 @@
                      {!! Form::submit('Delete This Task', ['class' => 'btn btn-danger']) !!}
                      {!! Form::close() !!}
                     </div>
-                    <hr>
                 </div>
                 @endforeach
-
+                <hr>
+                   <center><a href="{{ url('/create') }}" class="btn btn-success">Create A Task</a></center>
+                   <br>
                 </div>
         </div>
     </div>
