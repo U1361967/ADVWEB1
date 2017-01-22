@@ -76,7 +76,7 @@
                     @endif
                 </div>
             @endif
-
+            <!-- Display Welcome Screen -->
             <div class="content">
                 <div class="title m-b-md">
                     To-Do List

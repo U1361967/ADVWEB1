@@ -8,6 +8,7 @@
             <div class="panel panel-default">
                     <div class="panel-heading"><center>Edit A Task:</center></div>
                     <div class="panel-body">
+                    <!-- Allow A User To Edit Specified Task, Grabbing Current Content And Updating Database With Edited Task -->
 		{!! Form::model($task, ['method' => 'PATCH', 'url' => 'tasks/edit/' . $task->id]) !!}
 			<div class="form-group">
 				{!! Form::label('task', 'Task Name:') !!}

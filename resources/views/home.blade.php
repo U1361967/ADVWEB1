@@ -13,7 +13,7 @@
             </div> -->
             <div class="panel panel-default">
                     <div class="panel-heading"><center>To-Do List:</center></div>
-
+                <!-- Display Each Task Saved Under Current Users ID -->
                 @foreach ($find as $task)
                 <div class="panel-body">
                     <h4>{{ $task->task }}</h4>

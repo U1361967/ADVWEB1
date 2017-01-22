@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                     <div class="panel-heading"><center>Create A Task:</center></div>
                     <div class="panel-body">
-
+                        <!-- Create A New Task With Text Entered And Store Under Current User ID -->
                         {!! Form::open(['method' => 'POST', 'route'=>['tasks.store']]) !!}
                         <div class="form-group">
                             {!! Form::label('task', 'Task:', ['class' => 'control-label']) !!}
